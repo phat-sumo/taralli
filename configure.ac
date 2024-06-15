@@ -17,9 +17,12 @@ AC_CHECK_LIB([X11],[XOpenDisplay],[],[
 AC_CHECK_LIB([Xi],[XGrabDevice],[],[
          echo "XInput is required for this program"
          exit -1])
+AC_CHECK_LIB([Xrandr],[XGrabDevice],[],[
+         echo "XInput is required for this program"
+         exit -1])
 
 # Checks for header files.
-AC_CHECK_HEADERS([stdlib.h string.h X11/X.h X11/extensions/XInput2.h])
+AC_CHECK_HEADERS([stdlib.h string.h X11/X.h X11/extensions/XInput2.h X11/extensions/Xrandr.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
 
